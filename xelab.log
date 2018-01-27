@@ -1,0 +1,23 @@
+Vivado Simulator 2017.4
+Copyright 1986-1999, 2001-2016 Xilinx, Inc. All Rights Reserved.
+Running: /home1/c/cis371/software/Vivado/2017.4/bin/unwrapped/lnx64.o/xelab -cc gcc --debug typical --prj .prj --snapshot snapshot.sim --lib mylib mylib.test_adders 
+Multi-threading is on. Using 6 slave threads.
+INFO: [VRFC 10-2263] Analyzing Verilog file "/mnt/castor/seas_home/j/jamaalh/cis371/lab1/rca.v" into library mylib
+INFO: [VRFC 10-311] analyzing module halfadder
+INFO: [VRFC 10-311] analyzing module fulladder
+INFO: [VRFC 10-311] analyzing module fulladder2
+INFO: [VRFC 10-311] analyzing module rca4
+INFO: [VRFC 10-2263] Analyzing Verilog file "/mnt/castor/seas_home/j/jamaalh/cis371/lab1/rca_testbench.v" into library mylib
+INFO: [VRFC 10-311] analyzing module test_adders
+Starting static elaboration
+WARNING: [VRFC 10-278] actual bit length 4 differs from formal bit length 8 for port LED [/mnt/castor/seas_home/j/jamaalh/cis371/lab1/rca_testbench.v:32]
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module mylib.halfadder
+Compiling module mylib.fulladder
+Compiling module mylib.fulladder2
+Compiling module mylib.rca4
+Compiling module mylib.test_adders
+Built simulation snapshot snapshot.sim

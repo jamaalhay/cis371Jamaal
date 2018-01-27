@@ -1,0 +1,315 @@
+#-----------------------------------------------------------
+# Vivado v2017.4 (64-bit)
+# SW Build 2086221 on Fri Dec 15 20:54:30 MST 2017
+# IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
+# Start of session at: Fri Jan 26 17:02:15 2018
+# Process ID: 32338
+# Current directory: /mnt/castor/seas_home/j/jamaalh/cis371/lab1
+# Command line: vivado -mode batch -source ../common/tcl/synthesize.tcl
+# Log file: /mnt/castor/seas_home/j/jamaalh/cis371/lab1/vivado.log
+# Journal file: /mnt/castor/seas_home/j/jamaalh/cis371/lab1/vivado.jou
+#-----------------------------------------------------------
+source ../common/tcl/synthesize.tcl
+# set outputDir ./output
+# file mkdir $outputDir
+# proc get_file_contents { filename } {
+#     if {[catch {
+#         set FH [open $filename r]
+#         set content [read $FH]
+#         close $FH
+#     } errorstring]} {
+#         error " File $filename could not be opened : $errorstring "
+#     }
+#     return $content
+# }
+# read_verilog [get_file_contents .synthesis-source-files]
+# if { [string length [get_file_contents .constraint-files]] > 0 } {
+#     read_xdc [get_file_contents .constraint-files]
+# }
+# synth_design -top [get_file_contents .top-level-module] -part xc7z020clg484-1
+Command: synth_design -top rca4 -part xc7z020clg484-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7z020'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z020'
+INFO: Launching helper process for spawning children vivado processes
+INFO: Helper process launched with PID 32349 
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 1224.859 ; gain = 61.996 ; free physical = 124 ; free virtual = 4921
+---------------------------------------------------------------------------------
+INFO: [Synth 8-638] synthesizing module 'rca4' [/mnt/castor/seas_home/j/jamaalh/cis371/lab1/rca.v:47]
+INFO: [Synth 8-638] synthesizing module 'fulladder2' [/mnt/castor/seas_home/j/jamaalh/cis371/lab1/rca.v:33]
+INFO: [Synth 8-638] synthesizing module 'fulladder' [/mnt/castor/seas_home/j/jamaalh/cis371/lab1/rca.v:20]
+INFO: [Synth 8-638] synthesizing module 'halfadder' [/mnt/castor/seas_home/j/jamaalh/cis371/lab1/rca.v:10]
+INFO: [Synth 8-256] done synthesizing module 'halfadder' (1#1) [/mnt/castor/seas_home/j/jamaalh/cis371/lab1/rca.v:10]
+WARNING: [Synth 8-3848] Net s_tmp in module/entity fulladder does not have driver. [/mnt/castor/seas_home/j/jamaalh/cis371/lab1/rca.v:26]
+INFO: [Synth 8-256] done synthesizing module 'fulladder' (2#1) [/mnt/castor/seas_home/j/jamaalh/cis371/lab1/rca.v:20]
+INFO: [Synth 8-256] done synthesizing module 'fulladder2' (3#1) [/mnt/castor/seas_home/j/jamaalh/cis371/lab1/rca.v:33]
+WARNING: [Synth 8-689] width (3) of port connection 'a' does not match port width (2) of module 'fulladder2' [/mnt/castor/seas_home/j/jamaalh/cis371/lab1/rca.v:51]
+INFO: [Synth 8-256] done synthesizing module 'rca4' (4#1) [/mnt/castor/seas_home/j/jamaalh/cis371/lab1/rca.v:47]
+WARNING: [Synth 8-3917] design rca4 has port LED[7] driven by constant 0
+WARNING: [Synth 8-3917] design rca4 has port LED[6] driven by constant 0
+WARNING: [Synth 8-3917] design rca4 has port LED[5] driven by constant 0
+WARNING: [Synth 8-3917] design rca4 has port LED[4] driven by constant 0
+WARNING: [Synth 8-3331] design rca4 has unconnected port SWITCH[3]
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:08 ; elapsed = 00:00:10 . Memory (MB): peak = 1267.453 ; gain = 104.590 ; free physical = 176 ; free virtual = 4935
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+WARNING: [Synth 8-3295] tying undriven pin h1:a to constant 0 [/mnt/castor/seas_home/j/jamaalh/cis371/lab1/rca.v:28]
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:08 ; elapsed = 00:00:10 . Memory (MB): peak = 1267.453 ; gain = 104.590 ; free physical = 177 ; free virtual = 4936
+---------------------------------------------------------------------------------
+INFO: [Device 21-403] Loading part xc7z020clg484-1
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [/mnt/castor/seas_home/j/jamaalh/cis371/common/xdc/physical-leds-switches.xdc]
+Finished Parsing XDC File [/mnt/castor/seas_home/j/jamaalh/cis371/common/xdc/physical-leds-switches.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [/mnt/castor/seas_home/j/jamaalh/cis371/common/xdc/physical-leds-switches.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/rca4_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/rca4_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Completed Processing XDC Constraints
+
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.01 . Memory (MB): peak = 1613.242 ; gain = 0.000 ; free physical = 151 ; free virtual = 4671
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:25 ; elapsed = 00:00:49 . Memory (MB): peak = 1613.242 ; gain = 450.379 ; free physical = 220 ; free virtual = 4741
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7z020clg484-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:25 ; elapsed = 00:00:49 . Memory (MB): peak = 1613.242 ; gain = 450.379 ; free physical = 220 ; free virtual = 4741
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:25 ; elapsed = 00:00:49 . Memory (MB): peak = 1613.242 ; gain = 450.379 ; free physical = 222 ; free virtual = 4742
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:26 ; elapsed = 00:00:49 . Memory (MB): peak = 1613.242 ; gain = 450.379 ; free physical = 212 ; free virtual = 4733
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---XORs : 
+	   2 Input      1 Bit         XORs := 8     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Hierarchical Component Statistics 
+---------------------------------------------------------------------------------
+Hierarchical RTL Component report 
+Module halfadder 
+Detailed RTL Component Info : 
++---XORs : 
+	   2 Input      1 Bit         XORs := 1     
+---------------------------------------------------------------------------------
+Finished RTL Hierarchical Component Statistics
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 220 (col length:60)
+BRAMs: 280 (col length: RAMB18 60 RAMB36 30)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-3917] design rca4 has port LED[7] driven by constant 0
+WARNING: [Synth 8-3917] design rca4 has port LED[6] driven by constant 0
+WARNING: [Synth 8-3917] design rca4 has port LED[5] driven by constant 0
+WARNING: [Synth 8-3917] design rca4 has port LED[4] driven by constant 0
+WARNING: [Synth 8-3331] design rca4 has unconnected port SWITCH[3]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net O with 1st driver pin 'i_0/a0/a0/h0/s/O' [/mnt/castor/seas_home/j/jamaalh/cis371/lab1/rca.v:14]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net O with 2nd driver pin 'VCC' [/mnt/castor/seas_home/j/jamaalh/cis371/lab1/rca.v:14]
+CRITICAL WARNING: [Synth 8-5559] multi-driven net O is connected to constant driver, other driver is ignored [/mnt/castor/seas_home/j/jamaalh/cis371/lab1/rca.v:14]
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:26 ; elapsed = 00:00:49 . Memory (MB): peak = 1613.242 ; gain = 450.379 ; free physical = 205 ; free virtual = 4725
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:33 ; elapsed = 00:01:00 . Memory (MB): peak = 1613.242 ; gain = 450.379 ; free physical = 140 ; free virtual = 4598
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:33 ; elapsed = 00:01:00 . Memory (MB): peak = 1613.242 ; gain = 450.379 ; free physical = 140 ; free virtual = 4598
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:33 ; elapsed = 00:01:00 . Memory (MB): peak = 1613.242 ; gain = 450.379 ; free physical = 139 ; free virtual = 4597
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:33 ; elapsed = 00:01:01 . Memory (MB): peak = 1613.242 ; gain = 450.379 ; free physical = 143 ; free virtual = 4597
+---------------------------------------------------------------------------------
+CRITICAL WARNING: [Synth 8-3352] multi-driven net LED_OBUF[1] with 1st driver pin 'h0__0i_1/O' [/mnt/castor/seas_home/j/jamaalh/cis371/lab1/rca.v:15]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net LED_OBUF[1] with 2nd driver pin 'h0__0i_0/O' [/mnt/castor/seas_home/j/jamaalh/cis371/lab1/rca.v:14]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net LED_OBUF[2] with 1st driver pin 'a0__1i_2/O' [/mnt/castor/seas_home/j/jamaalh/cis371/lab1/rca.v:15]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net LED_OBUF[2] with 2nd driver pin 'i_3/O' [/mnt/castor/seas_home/j/jamaalh/cis371/lab1/rca.v:14]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net LED_OBUF[3] with 1st driver pin 'h0__0__0i_5/O' [/mnt/castor/seas_home/j/jamaalh/cis371/lab1/rca.v:15]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net LED_OBUF[3] with 2nd driver pin 'h0__0__0i_4/O' [/mnt/castor/seas_home/j/jamaalh/cis371/lab1/rca.v:14]
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        3|Failed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:33 ; elapsed = 00:01:01 . Memory (MB): peak = 1613.242 ; gain = 450.379 ; free physical = 143 ; free virtual = 4597
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:33 ; elapsed = 00:01:01 . Memory (MB): peak = 1613.242 ; gain = 450.379 ; free physical = 143 ; free virtual = 4597
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:33 ; elapsed = 00:01:01 . Memory (MB): peak = 1613.242 ; gain = 450.379 ; free physical = 143 ; free virtual = 4597
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:33 ; elapsed = 00:01:01 . Memory (MB): peak = 1613.242 ; gain = 450.379 ; free physical = 143 ; free virtual = 4597
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:33 ; elapsed = 00:01:01 . Memory (MB): peak = 1613.242 ; gain = 450.379 ; free physical = 143 ; free virtual = 4597
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+-----+------+
+|      |Cell |Count |
++------+-----+------+
+|1     |LUT2 |     6|
+|2     |IBUF |     7|
+|3     |OBUF |     8|
++------+-----+------+
+
+Report Instance Areas: 
++------+---------+-------+------+
+|      |Instance |Module |Cells |
++------+---------+-------+------+
+|1     |top      |       |    21|
++------+---------+-------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:33 ; elapsed = 00:01:01 . Memory (MB): peak = 1613.242 ; gain = 450.379 ; free physical = 143 ; free virtual = 4597
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 9 critical warnings and 5 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:23 ; elapsed = 00:00:30 . Memory (MB): peak = 1613.242 ; gain = 104.590 ; free physical = 202 ; free virtual = 4655
+Synthesis Optimization Complete : Time (s): cpu = 00:00:33 ; elapsed = 00:01:01 . Memory (MB): peak = 1613.242 ; gain = 450.379 ; free physical = 209 ; free virtual = 4663
+INFO: [Project 1-571] Translating synthesized netlist
+INFO: [Netlist 29-17] Analyzing 7 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+Parsing XDC File [/mnt/castor/seas_home/j/jamaalh/cis371/common/xdc/physical-leds-switches.xdc]
+Finished Parsing XDC File [/mnt/castor/seas_home/j/jamaalh/cis371/common/xdc/physical-leds-switches.xdc]
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+INFO: [Common 17-83] Releasing license: Synthesis
+20 Infos, 13 Warnings, 9 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:35 ; elapsed = 00:01:03 . Memory (MB): peak = 1634.262 ; gain = 484.742 ; free physical = 192 ; free virtual = 4646
+# report_timing_summary -file $outputDir/post_synth_timing_summary_report.txt
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+INFO: [Timing 38-91] UpdateTimingParams: Speed grade: -1, Delay Type: min_max.
+INFO: [Timing 38-191] Multithreading enabled for timing update using a maximum of 8 CPUs
+report_timing_summary: Time (s): cpu = 00:00:05 ; elapsed = 00:00:17 . Memory (MB): peak = 2027.430 ; gain = 393.168 ; free physical = 143 ; free virtual = 4352
+# report_utilization -file $outputDir/post_synth_utilization.txt
+report_utilization: Time (s): cpu = 00:00:00.04 ; elapsed = 00:00:00.08 . Memory (MB): peak = 2027.430 ; gain = 0.000 ; free physical = 143 ; free virtual = 4352
+# report_drc -file $outputDir/post_synth_drc_report.txt
+Command: report_drc -file ./output/post_synth_drc_report.txt
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/home1/c/cis371/software/Vivado/2017.4/data/ip'.
+INFO: [DRC 23-27] Running DRC with 8 threads
+INFO: [Coretcl 2-168] The results of DRC are in file /mnt/castor/seas_home/j/jamaalh/cis371/lab1/output/post_synth_drc_report.txt.
+report_drc completed successfully
+report_drc: Time (s): cpu = 00:00:03 ; elapsed = 00:00:06 . Memory (MB): peak = 2122.754 ; gain = 95.324 ; free physical = 123 ; free virtual = 4337
+INFO: [Common 17-206] Exiting Vivado at Fri Jan 26 17:03:56 2018...
